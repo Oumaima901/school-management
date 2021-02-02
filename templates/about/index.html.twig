@@ -1,0 +1,81 @@
+{% extends 'basefront.html.twig' %}
+{% block body %}
+
+    <!--? Preloader Start -->
+  
+    <!-- Preloader Start -->
+    {% include ('front/header.html.twig')%}
+     <div id="colorlib-page">
+      <header>
+        <div class="colorlib-navbar-brand text-center">
+          <a class="colorlib-logo"  href="{{ path('front')}}">Start Smart, Your High school</a>
+        </div>
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+      </header>
+   
+       <section class="hero-wrap" style="background-image: url(assets/images/15.jpg);" src="{{ asset ("assets/images/15.jpg") }}">
+      	<div class="overlay"></div>
+	      <div class="container">
+	        <div class="row no-gutters text align-items-end justify-content-center" data-scrollax-parent="true">
+	          <div class="col-md-8 ftco-animate text-center">
+	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>About</span></p>
+	            <h1 class="mb-5 bread">About Us</h1>
+	          </div>
+	        </div>
+	      </div>
+      </section>
+      <!-- END slider -->
+
+   <div class="about-section paddingTB60 ">
+				 <div class="container">
+                    <div class="row">
+						<div class="col-md-7 col-sm-6">
+							<div class="about-title clearfix">
+								<h1>About <span>Our High School</span></h1>
+								<h3>Start Smart </h3>
+								
+								 <p class="about-paddingB">Our school vision is built on the three central values of respect, resilience and responsibility. </p>
+                        <p class="about-paddingB">The children enjoy a balanced, diverse and inspiring academic programme which marries the distinguishing strengths of the British and New York educational systems. Our school curriculum and approach offer a unique option to families that seek both academic rigor and a forward thinking approach to teaching. Tailored academic advice is at the heart of our school’s ethos and families will always be welcomed to participate as full partners in the education of their children.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	    <section class="ftco-quote ftco-animate">
+	    	<div class="container">
+	    		<div class="row d-flex justify-content-end">
+	    			<div class="col-md-7 req-quote d-md-flex py-5 align-items-center img" style="background-image: url(assets/images/8.jpg); height:250px ; width:200px" src="{{ asset ("assets/images/8.jpg") }}">
+		    		
+		    			
+	    			</div>
+	    		</div>
+	    	</div>
+	    </section>
+
+	     <section class="ftco-section">
+    	<div class="container">
+    		<div class="row d-flex">
+        {% for Aboutpage in Aboutpage %}
+    			<div class="col-md-6 d-flex ftco-animate">
+    				<div class="img img-about align-self-stretch">	<img src="{{ asset ('frontendImages/Aboutimages/views/' ~ Aboutpage.view) }}" style="background-image: height:650px ; width:600px"/></div>
+    		
+          </div>
+          
+    			<div class="col-md-6 pl-md-5 ftco-animate">
+    				<h2 class="mb-4">{{  Aboutpage.title }}</h2>
+    				<p>{{  Aboutpage.description }}</p>
+    			
+    			</div>
+          {% endfor %}
+    		</div>
+    	</div>
+    </section>
+
+	        
+
+
+      {% include ('front/footer.html.twig')%}
+   
+
+ 
+{% endblock %}

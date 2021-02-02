@@ -1,0 +1,74 @@
+ {% extends 'basefront.html.twig' %}
+{% block body %}
+
+    <!--? Preloader Start -->
+  
+    <!-- Preloader Start -->
+    {% include ('front/header.html.twig')%}
+     <div id="colorlib-page">
+      <header>
+        <div class="colorlib-navbar-brand text-center">
+          <a class="colorlib-logo"  href="{{ path('front')}}">Start Smart, Your High school</a>
+        </div>
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+      </header>
+
+
+     <div class="hero-wrap hero-wrap-2" style="background-image: url(assets/images/14.jpg);" src="{{ asset ("assets/images/14.jpg") }}">
+      	<div class="overlay"></div>
+	      <div class="container">
+	        <div class="row no-gutters text align-items-end justify-content-center" data-scrollax-parent="true">
+	          <div class="col-md-8 ftco-animate text-center">
+	            
+	            <h1 class="mb-5 bread"> Our Teachers</h1>
+	          </div>
+	        </div>
+	      </div>
+      </section>
+      <!-- END slider -->
+
+ 
+    
+	               <section class="ftco-section bg-light">
+		    <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">Our Teachers</h2>
+          </div>
+        </div>
+		      <div class="row">
+               {% for Professor in Professor %}
+		        <div class="col-md-4 mb-3 text-center ftco-animate">
+		          <div class="testimony-wrap text-center">
+		           
+                     <div class="user-img mb-5" style="background-image: url({{ asset ('images/thumbnails/' ~ Professor.thumbnail) }})">
+	                    <span class="quote d-flex align-items-center justify-content-center">
+	                      <i class="icon-quote-left"></i>
+	                    </span>
+	                  </div>
+		            <h3 class="mb-3">{{  Professor.Fullname  }}</h3>
+		            <p class="mb-4">{{  Professor.EmailAddress }}</p>
+		           
+		            <p><a href="{{ path('Course')}}" class="btn btn-primary px-4 py-3">Start Now</a></p>
+		           
+		          </div>
+		        </div>
+	         {% endfor %}
+		      </div>
+		    </div>
+		  </section>
+      
+
+
+
+
+
+
+
+
+
+      {% include ('front/footer.html.twig')%}
+   
+
+ 
+{% endblock %}

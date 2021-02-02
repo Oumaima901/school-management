@@ -1,0 +1,82 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {% extends 'basefront.html.twig' %}
+{% block body %}
+
+    <!--? Preloader Start -->
+  
+    <!-- Preloader Start -->
+    {% include ('front/header.html.twig')%}
+
+ <div id="colorlib-page">
+      <header>
+        <div class="colorlib-navbar-brand text-center">
+          <a class="colorlib-logo"  href="{{ path('front')}}">Start Smart, Your High school</a>
+        </div>
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+      </header>
+
+
+     <div class="hero-wrap hero-wrap-2" style="background-image: url(assets/images/ev1.jpg);" src="{{ asset ("assets/images/14.jpg") }}">
+      	<div class="overlay"></div>
+	      <div class="container">
+	        <div class="row no-gutters text align-items-end justify-content-center" data-scrollax-parent="true">
+	          <div class="col-md-8 ftco-animate text-center">
+	            
+	            <h1 class="mb-5 bread"> Our Events</h1>
+	          </div>
+	        </div>
+	      </div>
+      </section>
+      <!-- END slider -->
+
+    <section class="ftco-section">
+	      <div class="container">
+	        <div class="row justify-content-center mb-5 pb-5">
+	          <div class="col-md-7 text-center heading-section ftco-animate">
+	            <h2 class="mb-4">ANNUAL SCHOOL EVENTS </h2>
+	            <p>
+We have four major school events which are held annually and see the communities of our two schools working side by side. Students and teachers take the lead in organising the School Festival in spring, Sports Day in fall, and the All School Production in winter, while parents are the driving force behind the International Fair in November. All four events offer excellent opportunities for students
+ to learn cooperation, teamwork and leadership skills while making memories that will last a lifetime.</p>
+	          </div>
+	        </div>
+	        <div class="row">
+             {% for Event in Event %}
+	          <div class="col-md-4 mb-5 ftco-animate">
+	            <div class="block-10">
+	              <div class="person-info mb-2">
+	                <span class="name">{{  Event.title  }}</span>
+	                <span class="position">{{  Event.date|date("m/d/Y") }}</span>
+	              </div>
+	              <img src="{{ asset ('frontendImages/Eventsimages/pictures/' ~ Event.picture) }}" alt="" class="img-fluid mb-3">
+	              <p>{{  Event.description  }}</p>
+	            </div>
+	          </div>
+	         {% endfor %}
+	        </div>
+	      </div>
+	    </section>
+
+
+
+
+         {% include ('front/footer.html.twig')%}
+   
+
+ 
+{% endblock %}
