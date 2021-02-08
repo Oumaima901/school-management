@@ -28,7 +28,11 @@ Vs Code, WampServer,PhpMyadmin.
 *)Installation:
 
  1-download the project.
+ 
  2-download the composer:https://getcomposer.org/
+ 
  3-export your database with this Command : php bin/console doctrine:database:create
+ 
  4-schema update command(send everything to the database): php bin/console doctrine:schema:update --force
+ 
  5-Run the server:php -S 127.0.0.1:8000 -t public
