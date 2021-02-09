@@ -35,4 +35,4 @@ Vs Code, WampServer,PhpMyadmin.
  
  4-schema update command(send everything to the database): php bin/console doctrine:schema:update --force
  
- 5-Run the server:php -S 127.0.0.1:8000 -t public
+ 5-Run the server
